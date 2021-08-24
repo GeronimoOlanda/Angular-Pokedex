@@ -7,9 +7,28 @@ import { Component, Input} from '@angular/core';
 })
 export class PokemonCardComponent {
   @Input()
-  public pokemon: string;
+  pokemon!: string;
+
+  @Input()
+  numero!: number;
 
   constructor(){
-      this.pokemon= 'Hello World'
+    this.pokemon = 'pikachu'
+  }
+
+  pegarImagemPokemon() {
+    const numeroFormatado = this.leadingZero(this.numero);
+
+    return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numeroFormatado}.png`;
+  }
+
+  leadingZero(str: string | number, size = 3): string {
+    let s = String(str);
+
+    while (s.length < (size || 2)) {
+      s = '0' + s;
+    }
+
+    return s;
   }
 }

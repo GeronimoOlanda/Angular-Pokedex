@@ -9,6 +9,7 @@ export class PokemonListComponent {
 
   pokemons = [
     "Bulbasaur",
-    "ivysaur"
+    "ivysaur",
+    "Venusaur"
   ];
 }
